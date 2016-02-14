@@ -1,3 +1,4 @@
+import java.sql.*;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -14,11 +15,15 @@ public class Account {
         return balance;
     }
 
-    public void deposit(Integer amount){
+    public Statement deposit(Integer amount){
         if (amount>=0){
             balance+=amount;
             Date depositDate = new Date();
             statement = new Statement(depositDate,balance,amount);
+            return statement;
+        }
+        else {
+            return null;
         }
     }
 
@@ -30,14 +35,7 @@ public class Account {
         }
     }
 
-    public boolean checkStatement(){
-        if(statement==statement){
-            return true;
-        }
-        else(statement == null){
-            return false;
-        }
-    }
+
 
 
 

@@ -5,11 +5,26 @@ import java.util.Date;
  */
 public class Statement {
 
+    private Integer statementBalance;
+    private Integer statementAmount;
+    private Date statementDate;
 
 
     public Statement(Date date, Integer balance, Integer amount){
-        Integer statementBalance = balance;
-        Integer statementAmount = amount;
-        Date statementDate = date;
+        statementBalance = balance;
+        statementAmount = amount;
+        statementDate = date;
+    }
+
+    public Integer checkStatementBalance(){
+        return statementBalance;
+    }
+
+    public Integer checkStatementAmount(){
+        return statementAmount;
+    }
+
+    public Date checkStatementDate(){
+        return statementDate;
     }
 }

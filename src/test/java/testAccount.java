@@ -1,5 +1,7 @@
 import org.junit.Before;
 import org.junit.Test;
+
+import static junit.framework.Assert.assertEquals;
 import static junit.framework.TestCase.assertTrue;
 public class testAccount {
     Account account;
@@ -42,9 +44,11 @@ public class testAccount {
     @Test
     public void testStatement(){
         Integer amount = 450;
-        account.deposit(amount);
+        Statement statement = account.deposit(amount);
+        Integer statementBalance = statement.checkStatementBalance();
 
-        assertTrue(account.checkBalance());
+
+        assertEquals(amount, statementBalance);
 
     }
 
